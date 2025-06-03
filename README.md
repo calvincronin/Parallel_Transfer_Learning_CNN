@@ -8,11 +8,11 @@ The scope of PTL is slightly different from that of traditional transfer learnin
 
 The general procedure structured path of comparison. In all, 3 models/trials were run. A baseline followed by two combinations of different supplemental classes added to the training data. These additional classes were also added to the validation data to make sure the training evolved reasonably well, and that any surprising outcomes with the test data were not due to poor/over training. The models were all compiled with the Adam optimizer and were trained for 20 epochs. But the supplemental data was never added to the final test data, as all three models made predictions on a dataset of only cats and dogs with their predictions also limited to either cats or dogs. Finally the efficacy of these predictions were evaluated and compared.
 
-<img src="paperimages/model1outline.png" alt="model1outline" width="500"/>
+<img src="paperimages/model1outline.png" alt="model1outline" width="600"/>
 <img src="paperimages/model2outline.png" alt="model2outline" width="300"/>
 <img src="paperimages/model3outline.png" alt="model3outline" width="300"/>
 
-<img src="paperimages/modelstraining.png" alt="training" width="500"/>
+<img src="paperimages/modelstraining.png" alt="training" width="600"/>
 
 When examining how the different models’ accuracy and loss evolved over time/epochs, they all demonstrated comparable results. They all seemed to train reasonably well with the validation loss/accuracy following their training counterparts well. There were some slight differences in the loss/accuracy cures and how steep they were at a given epoch. But generally I would say all of them are fairly conservative/flat, and if model optimization was the objective, these trials could benefit from an increased learning rate. Additionally given the trajectory and clear grouping of the curves, it is evident that the models have learned, but are actually somewhat undertrained. Again, because maximized performance is not the focus, the models being partially trained with the same number of epochs is actually perfect. It means comparisons between the models can be made at a benchmarked level of training, without wondering if measured differences could erroneously be attributed to overtraining or oversight.
 
