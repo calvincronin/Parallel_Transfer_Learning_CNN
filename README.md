@@ -27,7 +27,7 @@ The Dog-Cat-Jag-Wolf model showed more promising results with an accuracy of 76%
 
 <img src="paperimages/model1vsmodel3.png" alt="comparison" width="300"/>
 
-#Conclusion
+# Conclusion
 Whether or not this represents an overall improvement depends on the hypothetical use case of the model. But more than just raw predictive power increase, the supplemental wolf and jaguar data seemed to balance out the model a bit more. This model had significantly less tradeoff between precision/recall and between the target classes. This is further supported by findings in (Caruana 1997, 41-75) that MTL and joint training can have the effect of regularizers.
 
 Ultimately the Cat-Dog-Jag-Wolf model produced the best results of the experimental trials. While it was not a conclusive and total victory for PTL, it did demonstrate marginal improvements to both total accuracy and how robust different types of classification predictions would be. And even the complete failure of the Cat-Dog-Fox model provides value. It issues a warning of how massively detrimental bias can be introduced by closely related or unbalanced data.
