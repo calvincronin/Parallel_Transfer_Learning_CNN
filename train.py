@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import time
 import imagesize
-
+import kaggle
 
 # import tensorflow/keras
 import tensorflow as tf
@@ -31,6 +31,9 @@ tf.keras.backend.set_floatx('float64')
 tf.autograph.set_verbosity(0)
 
 StartTime = time.time()
+
+kaggle.api.authenticate()
+kaggle.api.dataset_download_files('Paralell_Transfer_Learning_CNN', path='.', unzip=True)
 
 def cord(hotvec):
     x0 = hotvec[0]
