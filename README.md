@@ -1,5 +1,5 @@
 # Preface
-Below is a reduced form factor of the full paper in this repo. Please keep in mind that this is an unorthodox deep learning experiment, so the methodology may also seem unorthodox. Please try to see it for the novel research question it aims to explore. 
+Below is a reduced form factor of the full paper in this repo. Please keep in mind that this is an unorthodox deep learning experiment, so the methodology may also seem unorthodox. The conclusions are also extremely preliminary. Please try to see it for the novel research question it aims to explore. 
 
 # Intro
 In an effort to further understand the limitations and benefits of transfer learning, this paper introduces a variation titled Parallel Transfer Learning. Transfer Learning is typically a linear and sequential process where a large scale or related source model is trained, and its architecture and learned features are augmented to make predictions for a smaller target dataset. The pretrained model is the dominant presence in the model. PTL is not sequential and doesn’t require pretraining. Instead it combines the target task data with a smaller set of related supplemental data, trains on the combined dataset all at once, and then makes predictions about just the target data.
