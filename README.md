@@ -1,6 +1,6 @@
 In an effort to further understand the limitations and benefits of transfer learning, this paper introduces a variation titled Parallel Transfer Learning. Transfer Learning is typically a linear and sequential process where a large scale or related source model is trained, and its architecture and learned features are augmented to make predictions for a smaller target dataset. The pretrained model is the dominant presence in the model. PTL is not sequential and doesn’t require pretraining. Instead it combines the target task data with a smaller set of related supplemental data, trains on the combined dataset all at once, and then makes predictions about just the target data.
 
-<img src="paperimages/dataset.png" alt="dataset" width="300"/>
+<img src="paperimages/dataset.png" alt="dataset" width="600"/>
 
 Another way of looking at PTL is training a multi-class classifier, then making predictions on data that represents a smaller subset of the initial classes. The key being that the initial extraneous classes are deliberately selected in relation to the smaller target subset. This paper focuses on implementing this with Convolutional Neural Network (CNN) aimed at distinguishing between images of cats and dogs. The same CNN model was trained to classify cats, dogs, and other related animals (foxes, wolves, jaguars) and attempted to classify the same test set containing images of only cats and dogs.
 
@@ -8,11 +8,11 @@ The scope of PTL is slightly different from that of traditional transfer learnin
 
 The general procedure structured path of comparison. In all, 3 models/trials were run. A baseline followed by two combinations of different supplemental classes added to the training data. These additional classes were also added to the validation data to make sure the training evolved reasonably well, and that any surprising outcomes with the test data were not due to poor/over training. The models were all compiled with the Adam optimizer and were trained for 20 epochs. But the supplemental data was never added to the final test data, as all three models made predictions on a dataset of only cats and dogs with their predictions also limited to either cats or dogs. Finally the efficacy of these predictions were evaluated and compared.
 
-<img src="paperimages/model1outline.png" alt="model1outline" width="300"/>
+<img src="paperimages/model1outline.png" alt="model1outline" width="500"/>
 <img src="paperimages/model2outline.png" alt="model2outline" width="300"/>
 <img src="paperimages/model3outline.png" alt="model3outline" width="300"/>
 
-<img src="paperimages/modelstraining.png" alt="training" width="300"/>
+<img src="paperimages/modelstraining.png" alt="training" width="500"/>
 
 When examining how the different models’ accuracy and loss evolved over time/epochs, they all demonstrated comparable results. They all seemed to train reasonably well with the validation loss/accuracy following their training counterparts well. There were some slight differences in the loss/accuracy cures and how steep they were at a given epoch. But generally I would say all of them are fairly conservative/flat, and if model optimization was the objective, these trials could benefit from an increased learning rate. Additionally given the trajectory and clear grouping of the curves, it is evident that the models have learned, but are actually somewhat undertrained. Again, because maximized performance is not the focus, the models being partially trained with the same number of epochs is actually perfect. It means comparisons between the models can be made at a benchmarked level of training, without wondering if measured differences could erroneously be attributed to overtraining or oversight.
 
